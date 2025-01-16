@@ -14,44 +14,44 @@ import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 
 export default function Contact() {
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const { toast } = useToast();
+  //   const [isSubmitting, setIsSubmitting] = useState(false);
+  //   const { toast } = useToast();
 
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    setIsSubmitting(true);
+  //   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+  //     event.preventDefault();
+  //     setIsSubmitting(true);
 
-    const formData = new FormData(event.currentTarget);
-    const data = Object.fromEntries(formData);
+  //     const formData = new FormData(event.currentTarget);
+  //     const data = Object.fromEntries(formData);
 
-    try {
-      const response = await fetch("/api/send-email", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
+  //     try {
+  //       const response = await fetch("/api/send-email", {
+  //         method: "POST",
+  //         headers: {
+  //           "Content-Type": "application/json",
+  //         },
+  //         body: JSON.stringify(data),
+  //       });
 
-      if (response.ok) {
-        toast({
-          title: "Message sent!",
-          description: "Thank you for your message. I'll get back to you soon.",
-        });
-        event.currentTarget.reset();
-      } else {
-        throw new Error("Failed to send message");
-      }
-    } catch (error) {
-      toast({
-        title: "Error",
-        description: "Failed to send message. Please try again later.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
+  //       if (response.ok) {
+  //         toast({
+  //           title: "Message sent!",
+  //           description: "Thank you for your message. I'll get back to you soon.",
+  //         });
+  //         event.currentTarget.reset();
+  //       } else {
+  //         throw new Error("Failed to send message");
+  //       }
+  //     } catch (error) {
+  //       toast({
+  //         title: "Error",
+  //         description: "Failed to send message. Please try again later.",
+  //         variant: "destructive",
+  //       });
+  //     } finally {
+  //       setIsSubmitting(false);
+  //     }
+  //   };
 
   return (
     <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/50">
@@ -66,7 +66,8 @@ export default function Contact() {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <form onSubmit={handleSubmit} className="space-y-4">
+            {/* <form onSubmit={handleSubmit} className="space-y-4"> */}
+            <form className="space-y-4">
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label
@@ -110,9 +111,10 @@ export default function Contact() {
                   required
                 />
               </div>
-              <Button type="submit" className="w-full" disabled={isSubmitting}>
+              {/* <Button type="submit" className="w-full" disabled={isSubmitting}>
                 {isSubmitting ? "Sending..." : "Send Message"}
-              </Button>
+              </Button> */}
+              <Button>Send Message</Button>
             </form>
           </CardContent>
         </Card>
