@@ -56,7 +56,7 @@ export default function Contact() {
   return (
     <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/50">
       <div className="container mx-auto max-w-2xl">
-        <Card>
+        <Card className="bg-muted/100">
           <CardHeader>
             <CardTitle className="text-3xl font-bold text-center">
               Get in Touch
@@ -76,6 +76,7 @@ export default function Contact() {
                     Name
                   </label>
                   <Input
+                    className="bg-white"
                     id="name"
                     name="name"
                     placeholder="Your name"
@@ -89,6 +90,7 @@ export default function Contact() {
                     Email
                   </label>
                   <Input
+                    className="bg-white"
                     id="email"
                     name="email"
                     type="email"
@@ -104,6 +106,7 @@ export default function Contact() {
                   Message
                 </label>
                 <Textarea
+                  className="bg-white text-black"
                   id="message"
                   name="message"
                   placeholder="Tell me about your project"

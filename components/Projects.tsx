@@ -63,7 +63,7 @@ export default function Projects() {
           {projects.map((project) => (
             <Card
               key={project.title}
-              className="overflow-hidden cursor-pointer"
+              className="overflow-hidden cursor-pointer bg-muted/100"
               onClick={() => setSelectedProject(project)}>
               <Image
                 src={project.image || "/placeholder.svg"}
@@ -81,7 +81,7 @@ export default function Projects() {
                 </CardDescription>
                 <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag) => (
-                    <Badge key={tag} variant="secondary">
+                    <Badge key={tag} className="bg-muted-foreground">
                       {tag}
                     </Badge>
                   ))}

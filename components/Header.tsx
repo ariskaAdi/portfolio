@@ -12,8 +12,8 @@ export default function Header() {
 
   return (
     <>
-      <header className="py-4 px-4 sm:px-6 lg:px-8 fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur">
-        <div className="container mx-auto flex justify-between items-center">
+      <header className="py-4 px-4 sm:px-6 lg:px-8 fixed top-0 left-0 right-0 z-50 bg-background/50 backdrop-blur">
+        <div className="container mx-auto flex justify-between items-center md:px-24">
           <div className="flex gap-4">
             <Link href="/" className="flex items-center space-x-2">
               <span className="font-bold text-xl">Ariska Adi</span>
